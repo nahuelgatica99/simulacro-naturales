@@ -42,48 +42,122 @@ const BIBLIOTECA_EXTENDIDA = {
   }
 };
 
-const GLOSARIO = [
-  { p: "Termodinámica", d: "Rama de la física que estudia el calor y la energía." },
-  { p: "Modelo Corpuscular", d: "Idea de que todo está hecho de bolitas invisibles que siempre se mueven." },
-  { p: "Equilibrio Térmico", d: "Cuando dos cosas quedan a la misma temperatura y el calor deja de viajar." },
-  { p: "Convección", d: "Transferencia de calor en líquidos y gases (el aire caliente sube)." },
-  { p: "Conducción", d: "Paso del calor por contacto directo en sólidos (como el metal)." },
-  { p: "Radiación", d: "Calor que viaja por ondas, como la luz del Sol o una estufa infrarroja." },
-  { p: "Cero Absoluto", d: "La temperatura más baja posible, donde nada se mueve (ni las partículas)." },
-  { p: "Energía Térmica", d: "La energía total que tiene un cuerpo por el movimiento de sus partículas." }
-];
+const GLOSARIO_CATEGORIZADO = {
+  "La temperatura y el calor": [
+    { p: "Calor", d: "Energía en tránsito que viaja de un cuerpo con mayor temperatura a uno de menor." },
+    { p: "Temperatura", d: "Medida de la agitación o movimiento de las partículas de un cuerpo." },
+    { p: "Equilibrio Térmico", d: "Estado en el que dos cuerpos igualan su temperatura y el calor deja de fluir." },
+    { p: "Energía Térmica", d: "La energía total de un cuerpo debido al movimiento de sus partículas." }
+  ],
+  "La medición de la temperatura": [
+    { p: "Termómetro", d: "Instrumento que se utiliza para medir la temperatura de forma precisa." },
+    { p: "Grados Celsius (°C)", d: "Escala de medición de temperatura más utilizada en el mundo." },
+    { p: "Cero Absoluto", d: "Temperatura más baja teórica donde las partículas dejan de moverse por completo." }
+  ],
+  "La transmisión del calor": [
+    { p: "Conducción", d: "Transmisión de calor por contacto directo, típica en materiales sólidos." },
+    { p: "Convección", d: "Transmisión de calor en fluidos (líquidos y gases) a través de movimientos de masas." },
+    { p: "Radiación", d: "Calor que viaja a través de ondas y puede propagarse incluso en el vacío." },
+    { p: "Vacío", d: "Espacio donde no hay materia; solo el calor por radiación puede viajar por aquí." }
+  ],
+  "Los estados de la materia": [
+    { p: "Sólido", d: "Estado donde las partículas están muy juntas y tienen forma y volumen propios." },
+    { p: "Líquido", d: "Estado con volumen definido pero forma variable (se adapta al envase)." },
+    { p: "Gaseoso", d: "Estado donde las partículas están muy separadas y se mueven libremente." },
+    { p: "Fluido", d: "Sustancia que puede moverse o fluir, como los líquidos y los gases." }
+  ],
+  "El modelo corpuscular de la materia": [
+    { p: "Modelo Corpuscular", d: "Idea científica de que todo está hecho de pequeñas partículas (bolitas) en movimiento." },
+    { p: "Energía Cinética", d: "Es la energía que tienen las partículas debido a su movimiento o velocidad." },
+    { p: "Partícula", d: "El componente más pequeño e invisible que forma toda la materia." }
+  ],
+  "Los cambios de estado": [
+    { p: "Fusión", d: "Paso de sólido a líquido al absorber calor (ej: hielo derritiéndose)." },
+    { p: "Solidificación", d: "Paso de líquido a sólido al perder calor (ej: hacer hielo)." },
+    { p: "Evaporación", d: "Paso de líquido a gas de forma lenta en la superficie." },
+    { p: "Condensación", d: "Paso de gas a líquido al enfriarse (ej: empañar un vidrio)." },
+    { p: "Dilatación", d: "Aumento de tamaño de un material al calentarse." },
+    { p: "Contracción", d: "Disminución de tamaño de un material al enfriarse." }
+  ],
+  "El aire y la atmósfera": [
+    { p: "Atmósfera", d: "Capa de gases que rodea la Tierra y que nos permite vivir." },
+    { p: "Nitrógeno", d: "El gas más abundante del aire (ocupa el 78%)." },
+    { p: "Oxígeno", d: "Gas indispensable para la respiración de los seres vivos (ocupa el 21%)." },
+    { p: "Presión Atmosférica", d: "El peso que el aire ejerce sobre todas las cosas de la Tierra." }
+  ]
+};
 
-const PREGUNTAS = [
+// --- BANCO DE 60 PREGUNTAS COMPLETO ---
+const BANCO_PREGUNTAS = [
+  // --- CALOR Y TEMPERATURA (1-12) ---
   { q: "¿Qué pasa con las partículas al calentar algo?", o: ["Se detienen", "Se mueven más rápido", "Se rompen"], c: 1, e: "El calor aumenta la energía y el movimiento de las partículas.", h: "Calor es movimiento.", t: "Modelo Corpuscular" },
-  { q: "El metal es un material...", o: ["Aislante", "Conductor", "Gaseoso"], c: 1, e: "Los metales dejan pasar el calor con facilidad.", h: "Cuchara metálica en té caliente.", t: "Materiales" },
   { q: "¿Hacia dónde viaja siempre el calor?", o: ["Frío a Caliente", "Caliente a Frío", "No viaja"], c: 1, e: "La energía fluye del cuerpo con más temperatura al de menos.", h: "El calor busca equilibrar.", t: "Termodinámica" },
-  { q: "Cuando el vapor se hace gotitas en el espejo:", o: ["Fusión", "Condensación", "Evaporación"], c: 1, e: "El gas pierde calor y se transforma en líquido.", h: "Ocurre después de bañarse.", t: "Cambios" },
-  { q: "El aire caliente suele...", o: ["Bajar", "Subir", "Quedarse quieto"], c: 1, e: "El aire caliente es menos denso (más liviano) y flota.", h: "Globos aerostáticos.", t: "El Aire" },
-  { q: "El telgopor y el corcho son:", o: ["Conductores", "Aislantes", "Líquidos"], c: 1, e: "Tienen aire atrapado que frena el calor.", h: "Se usan en heladeritas.", t: "Materiales" },
-  { q: "El hielo derritiéndose es:", o: ["Solidificación", "Fusión", "Sublimación"], c: 1, e: "El sólido absorbe calor y se vuelve líquido.", h: "De sólido a líquido.", t: "Cambios" },
   { q: "La temperatura mide:", o: ["La masa", "La agitación de las partículas", "El peso"], c: 1, e: "Mide qué tan rápido vibran las partículas.", h: "No es lo mismo que calor.", t: "Temperatura" },
   { q: "El equilibrio térmico se alcanza cuando:", o: ["Las temperaturas se igualan", "Una cosa se congela", "El calor sube"], c: 0, e: "Ya no hay flujo de energía porque empataron.", h: "Empate térmico.", t: "Equilibrio" },
-  { q: "¿Por qué las sartenes tienen mango de plástico?", o: ["Para que pesen menos", "Porque el plástico es aislante", "Para que sea más lindo"], c: 1, e: "El aislante evita que el calor pase a tu mano.", h: "Seguridad térmica.", t: "Materiales" },
-  { q: "En el vacío, el calor viaja por:", o: ["Conducción", "Radiación", "Convección"], c: 1, e: "Es la única forma en que el calor viaja sin materia.", h: "Como el Sol a la Tierra.", t: "Radiación" },
-  { q: "¿Qué gas es el más abundante en el aire?", o: ["Oxígeno", "Nitrógeno", "Argón"], c: 1, e: "El nitrógeno ocupa el 78% del aire.", h: "No es el que respiramos.", t: "Atmósfera" },
-  { q: "El agua líquida pasando a hielo es:", o: ["Fusión", "Solidificación", "Ebullición"], c: 1, e: "Se quita calor hasta que el agua se congela.", h: "Líquido a sólido.", t: "Cambios" },
-  { q: "Las partículas de un gas están:", o: ["Muy juntas", "Muy separadas y veloces", "Vibrando apenas"], c: 1, e: "Vuelan libremente ocupando todo el espacio.", h: "Modelo Corpuscular.", t: "Estados" },
-  { q: "Si tocás madera y metal afuera en invierno:", o: ["Están igual", "El metal parece más frío", "La madera está más fría"], c: 1, e: "El metal te quita calor más rápido por ser conductor.", h: "Sensación térmica.", t: "Materiales" },
-  { q: "¿Qué sucede con el volumen si el aire se calienta?", o: ["Se achica", "Se expande", "No cambia"], c: 1, e: "Las partículas chocan con más fuerza y se separan.", h: "Dilatación térmica.", t: "El Aire" },
-  { q: "Un termo mantiene el agua caliente porque:", o: ["Genera calor", "Tiene paredes aislantes", "Es de metal"], c: 1, e: "Reduce la pérdida de calor al exterior.", h: "Usa el vacío.", t: "Materiales" },
-  { q: "La brisa marina se produce por:", o: ["Diferencia de temperatura", "Los peces", "La sal"], c: 0, e: "El aire se mueve buscando equilibrio.", h: "Convección a gran escala.", t: "El Aire" },
   { q: "La energía térmica depende de:", o: ["Solo la masa", "Solo el color", "Masa y temperatura"], c: 2, e: "Más partículas moviéndose es más energía.", h: "Cantidad de materia.", t: "Termodinámica" },
-  { q: "Un abrigo de lana te protege porque:", o: ["Produce fuego", "Atrapa aire quieto", "Es muy pesado"], c: 1, e: "El aire atrapado funciona como un muro térmico.", h: "La lana es aislante.", t: "Materiales" },
-  { q: "Para que el agua hierva (ebullición) debe:", o: ["Perder calor", "Ganar calor", "Estar quieta"], c: 1, e: "Necesita energía para romper los lazos del líquido.", h: "Líquido a gas.", t: "Cambios" },
   { q: "La palabra 'Térmico' viene de:", o: ["Dynamis", "Thermas", "Corpus"], c: 1, e: "Thermas en griego significa calor.", h: "Etimología.", t: "Glosario" },
-  { q: "¿Dónde están más quietas las partículas?", o: ["En el vapor", "En el agua", "En el hielo"], c: 2, e: "En los sólidos la energía cinética es menor.", h: "Estados de la materia.", t: "Modelo Corpuscular" },
+  { q: "El 'Cero Absoluto' es:", o: ["0 grados Celsius", "-273 grados Celsius", "100 grados"], c: 1, e: "Es la temperatura teórica donde nada se mueve.", h: "Límite físico.", t: "Glosario" },
+  { q: "Para estudiar el calor usamos la:", o: ["Biología", "Termodinámica", "Geología"], c: 1, e: "Es la rama que explica estos fenómenos.", h: "Nombre de la ciencia.", t: "Termodinámica" },
+  { q: "¿Qué sucede si mezclamos agua a 20°C con agua a 20°C?", o: ["Sube a 40°C", "Se mantiene a 20°C", "Baja a 0°C"], c: 1, e: "Al estar a la misma temperatura, ya están en equilibrio.", h: "No hay diferencia térmica.", t: "Equilibrio" },
+  { q: "Si un cuerpo tiene más masa que otro a igual temperatura:", o: ["Tiene más calor", "Tiene menos calor", "Tienen igual calor"], c: 0, e: "A más partículas, más energía térmica total almacenada.", h: "Pensá en una pileta vs una taza.", t: "Termodinámica" },
+  { q: "¿Cómo se llama la energía 'en movimiento' entre cuerpos?", o: ["Temperatura", "Calor", "Grados"], c: 1, e: "El calor es energía que transita de un objeto a otro.", h: "Es energía viajera.", t: "Termodinámica" },
+  { q: "¿En qué unidad medimos comúnmente la temperatura?", o: ["Metros", "Grados Celsius", "Kilogramos"], c: 1, e: "Usamos la escala Celsius (°C) para el clima y el cuerpo.", h: "Se usa un termómetro.", t: "Temperatura" },
+
+  // --- MATERIALES: CONDUCTORES Y AISLANTES (13-24) ---
+  { q: "El metal es un material...", o: ["Aislante", "Conductor", "Gaseoso"], c: 1, e: "Los metales dejan pasar el calor con facilidad.", h: "Cuchara metálica en té caliente.", t: "Materiales" },
+  { q: "El telgopor y el corcho son:", o: ["Conductores", "Aislantes", "Líquidos"], c: 1, e: "Tienen aire atrapado que frena el calor.", h: "Se usan en heladeritas.", t: "Materiales" },
+  { q: "¿Por qué las sartenes tienen mango de plástico?", o: ["Para que pesen menos", "Porque el plástico es aislante", "Para que sea más lindo"], c: 1, e: "El aislante evita que el calor pase a tu mano.", h: "Seguridad térmica.", t: "Materiales" },
+  { q: "Si tocás madera y metal afuera en invierno:", o: ["Están igual", "El metal parece más frío", "La madera está más fría"], c: 1, e: "El metal te quita calor más rápido por ser conductor.", h: "Sensación térmica.", t: "Materiales" },
+  { q: "Un termo mantiene el agua caliente porque:", o: ["Genera calor", "Tiene paredes aislantes", "Es de metal"], c: 1, e: "Reduce la pérdida de calor al exterior.", h: "Usa el vacío.", t: "Materiales" },
+  { q: "Un abrigo de lana te protege porque:", o: ["Produce fuego", "Atrapa aire quieto", "Es muy pesado"], c: 1, e: "El aire atrapado funciona como un muro térmico.", h: "La lana es aislante.", t: "Materiales" },
+  { q: "El vidrio es un material:", o: ["Buen conductor", "Mal conductor", "Metálico"], c: 1, e: "El vidrio no conduce el calor tan rápido como el metal.", h: "Se usa en ventanas dobles.", t: "Materiales" },
+  { q: "Las pinzas de cocina suelen tener goma para:", o: ["No resbalar", "Aislar el calor", "Ambas son correctas"], c: 2, e: "La goma es aislante y mejora el agarre.", h: "Protección y utilidad.", t: "Materiales" },
+  { q: "¿Cuál de estos es el mejor conductor?", o: ["Madera", "Cobre", "Plástico"], c: 1, e: "El cobre es uno de los mejores conductores térmicos.", h: "Se usa en cables y ollas.", t: "Materiales" },
+  { q: "El aire en reposo funciona como:", o: ["Conductor", "Aislante", "Combustible"], c: 1, e: "El aire quieto es un excelente aislante térmico.", h: "Pensá en las plumas de las aves.", t: "Materiales" },
+  { q: "¿Por qué el hielo dura más en una caja de telgopor?", o: ["Porque el telgopor enfría", "Porque es un aislante", "Porque es blanco"], c: 1, e: "Evita que el calor del ambiente entre a la caja.", h: "Mantiene el frío adentro.", t: "Materiales" },
+  { q: "Los metales conducen calor porque sus partículas:", o: ["Están muy separadas", "Pasan la energía fácilmente", "No se mueven"], c: 1, e: "Su estructura permite un flujo rápido de energía.", h: "Es una autopista de calor.", t: "Materiales" },
+
+  // --- CAMBIOS DE ESTADO (25-36) ---
+  { q: "Cuando el vapor se hace gotitas en el espejo:", o: ["Fusión", "Condensación", "Evaporación"], c: 1, e: "El gas pierde calor y se transforma en líquido.", h: "Ocurre después de bañarse.", t: "Cambios" },
+  { q: "El hielo derritiéndose es:", o: ["Solidificación", "Fusión", "Sublimación"], c: 1, e: "El sólido absorbe calor y se vuelve líquido.", h: "De sólido a líquido.", t: "Cambios" },
+  { q: "El agua líquida pasando a hielo es:", o: ["Fusión", "Solidificación", "Ebullición"], c: 1, e: "Se quita calor hasta que el agua se congela.", h: "Líquido a sólido.", t: "Cambios" },
+  { q: "Para que el agua hierva (ebullición) debe:", o: ["Perder calor", "Ganar calor", "Estar quieta"], c: 1, e: "Necesita energía para romper los lazos del líquido.", h: "Líquido a gas.", t: "Cambios" },
+  { q: "La condensación es el paso de:", o: ["Sólido a gas", "Gas a líquido", "Líquido a sólido"], c: 1, e: "Se produce por enfriamiento.", h: "Gotitas de agua.", t: "Cambios" },
+  { q: "¿Cómo se llama el paso de líquido a gas lento?", o: ["Ebullición", "Evaporación", "Fusión"], c: 1, e: "La evaporación ocurre en la superficie a cualquier temperatura.", h: "La ropa secándose al sol.", t: "Cambios" },
+  { q: "Si ponemos alcohol en la mano y sentimos frío es porque:", o: ["El alcohol está helado", "Se está evaporando", "Se está congelando"], c: 1, e: "Al evaporarse, el alcohol nos quita calor.", h: "Cambio de líquido a gas.", t: "Cambios" },
+  { q: "La nieve es agua en estado:", o: ["Gaseoso", "Líquido", "Sólido"], c: 2, e: "Son cristales de hielo formados en la atmósfera.", h: "Está muy fría.", t: "Cambios" },
+  { q: "Al secarse un charco de lluvia ocurre:", o: ["Condensación", "Evaporación", "Solidificación"], c: 1, e: "El agua líquida pasa a vapor de agua.", h: "Sube al aire.", t: "Cambios" },
+  { q: "¿Qué estado tiene forma y volumen propios?", o: ["Sólido", "Líquido", "Gaseoso"], c: 0, e: "Las partículas están muy juntas y ordenadas.", h: "Como una piedra.", t: "Modelo Corpuscular" },
+  { q: "Los líquidos tienen volumen definido pero:", o: ["No tienen masa", "No tienen forma propia", "No tienen partículas"], c: 1, e: "Toman la forma del recipiente que los contiene.", h: "Como el agua en un vaso.", t: "Modelo Corpuscular" },
+  { q: "El 'humito' que sale de la sopa caliente es:", o: ["Vapor invisible", "Gotitas de agua (vapor condensado)", "Aire puro"], c: 1, e: "Es vapor que se enfrió al contacto con el aire.", h: "Se ve blanco.", t: "Cambios" },
+
+  // --- EL AIRE Y LA ATMÓSFERA (37-48) ---
+  { q: "El aire caliente suele...", o: ["Bajar", "Subir", "Quedarse quieto"], c: 1, e: "El aire caliente es menos denso (más liviano) y flota.", h: "Globos aerostáticos.", t: "El Aire" },
+  { q: "¿Qué gas es el más abundante en el aire?", o: ["Oxígeno", "Nitrógeno", "Argón"], c: 1, e: "El nitrógeno ocupa el 78% del aire.", h: "No es el que respiramos.", t: "Atmósfera" },
+  { q: "¿Qué sucede con el volumen si el aire se calienta?", o: ["Se achica", "Se expande", "No cambia"], c: 1, e: "Las partículas chocan con más fuerza y se separan.", h: "Dilatación térmica.", t: "El Aire" },
+  { q: "La brisa marina se produce por:", o: ["Diferencia de temperatura", "Los peces", "La sal"], c: 0, e: "El aire se mueve buscando equilibrio.", h: "Convección a gran escala.", t: "El Aire" },
   { q: "El aire tiene peso y ocupa lugar:", o: ["Falso", "Verdadero", "Solo si hay viento"], c: 1, e: "Aunque sea invisible, es materia.", h: "Propiedades del aire.", t: "El Aire" },
   { q: "Si ponés un globo al sol, este:", o: ["Se desinfla", "Se infla más", "Se pone azul"], c: 1, e: "El aire adentro se calienta y expande.", h: "Dilatación.", t: "El Aire" },
+  { q: "¿Qué gas necesitamos para respirar?", o: ["Dióxido de Carbono", "Oxígeno", "Nitrógeno"], c: 1, e: "El oxígeno es vital para los seres vivos.", h: "21% del aire.", t: "Atmósfera" },
+  { q: "La capa de aire que rodea la Tierra es la:", o: ["Hidrósfera", "Atmósfera", "Geósfera"], c: 1, e: "Es la capa gaseosa de nuestro planeta.", h: "Donde están las nubes.", t: "Atmósfera" },
+  { q: "El viento es simplemente:", o: ["Aire en movimiento", "Oxígeno puro", "Vapor de agua"], c: 0, e: "Se produce por cambios de presión y temperatura.", h: "Se siente en la cara.", t: "El Aire" },
+  { q: "Un globo inflado pesa más que uno desinflado porque:", o: ["El aire pesa", "El plástico se estira", "Es un truco"], c: 0, e: "El aire tiene masa y se puede pesar.", h: "Propiedad de la materia.", t: "El Aire" },
+  { q: "El aire frío es más...", o: ["Pesado (denso)", "Liviano", "Caliente"], c: 0, e: "Sus partículas están más juntas y tiende a bajar.", h: "Baja hasta el suelo.", t: "El Aire" },
+  { q: "El componente del aire que usan las plantas es:", o: ["Oxígeno", "Dióxido de Carbono", "Argón"], c: 1, e: "Lo usan para la fotosíntesis.", h: "Lo que exhalamos nosotros.", t: "Atmósfera" },
+
+  // --- TRANSMISIÓN DE CALOR Y EXTRAS (49-60) ---
+  { q: "En el vacío, el calor viaja por:", o: ["Conducción", "Radiación", "Convección"], c: 1, e: "Es la única forma en que el calor viaja sin materia.", h: "Como el Sol a la Tierra.", t: "Radiación" },
   { q: "La transferencia de calor por corrientes es:", o: ["Conducción", "Convección", "Radiación"], c: 1, e: "Ocurre en fluidos (agua o aire).", h: "Movimiento de masas.", t: "Transmisión" },
   { q: "En un día de sol, la arena quema porque:", o: ["Es conductora", "Tiene sol adentro", "Es un gas"], c: 0, e: "La arena absorbe y transmite calor rápidamente.", h: "Sólidos conductores.", t: "Materiales" },
-  { q: "La condensación es el paso de:", o: ["Sólido a gas", "Gas a líquido", "Líquido a sólido"], c: 1, e: "Se produce por enfriamiento.", h: "Gotitas de agua.", t: "Cambios" },
-  { q: "El 'Cero Absoluto' es:", o: ["0 grados Celsius", "-273 grados Celsius", "100 grados"], c: 1, e: "Es la temperatura teórica donde nada se mueve.", h: "Límite físico.", t: "Glosario" },
-  { q: "Para estudiar el calor usamos la:", o: ["Biología", "Termodinámica", "Geología"], c: 1, e: "Es la rama que explica estos fenómenos.", h: "Nombre de la ciencia.", t: "Termodinámica" }
+  { q: "¿Cómo viaja el calor por una barra de metal?", o: ["Convección", "Radiación", "Conducción"], c: 2, e: "Viaja partícula a partícula por contacto.", h: "De un extremo al otro.", t: "Transmisión" },
+  { q: "Sentir el calor de una fogata sin tocarla es:", o: ["Conducción", "Radiación", "Fricción"], c: 1, e: "El calor llega por ondas infrarrojas.", h: "A la distancia.", t: "Radiación" },
+  { q: "En una casa, el piso suele estar más frío que el techo por:", o: ["Convección", "Radiación", "Mala suerte"], c: 0, e: "El aire caliente sube y el frío baja.", h: "Movimiento del aire.", t: "Transmisión" },
+  { q: "¿Qué pasa con una barra de hierro si se calienta?", o: ["Se encoge", "Se dilata (estira)", "Se vuelve madera"], c: 1, e: "El calor hace que los sólidos aumenten su tamaño.", h: "Dilatación de sólidos.", t: "Modelo Corpuscular" },
+  { q: "Las partículas de un gas están:", o: ["Muy juntas", "Muy separadas y veloces", "Vibrando apenas"], c: 1, e: "Vuelan libremente ocupando todo el espacio.", h: "Modelo Corpuscular.", t: "Estados" },
+  { q: "¿Dónde están más quietas las partículas?", o: ["En el vapor", "En el agua", "En el hielo"], c: 2, e: "En los sólidos la energía cinética es menor.", h: "Estados de la materia.", t: "Modelo Corpuscular" },
+  { q: "Al tocar un cubo de hielo, el calor viaja:", o: ["Del hielo a tu mano", "De tu mano al hielo", "No viaja"], c: 1, e: "Tu mano tiene más temperatura, por eso entrega calor.", h: "De mayor a menor.", t: "Termodinámica" },
+  { q: "La ropa oscura al sol da más calor porque:", o: ["Refleja la luz", "Absorbe más radiación", "Es más pesada"], c: 1, e: "Los colores oscuros atrapan más energía solar.", h: "Absorción de energía.", t: "Radiación" },
+  { q: "Para evitar que el calor escape de una casa usamos:", o: ["Ventanas de metal", "Aislantes en las paredes", "Pintura roja"], c: 1, e: "Los materiales aislantes mantienen el clima interno.", h: "Como un termo gigante.", t: "Materiales" }
 ];
 
 let score = 0, currentIdx = 0, needsReview = new Set(), hintUsed = false;
@@ -155,16 +229,40 @@ function showInfo(k) {
 }
 
 function showGlosario() {
-  document.getElementById('title').innerText = "GLOSARIO";
+  document.getElementById('title').innerText = "GLOSARIO POR TEMAS";
   let html = "";
-  GLOSARIO.forEach(i => html += `<div class="theory-section"><b>${i.p}:</b> ${i.d}</div>`);
+  
+  for (let tema in GLOSARIO_CATEGORIZADO) {
+    // Título de la sección según tu imagen
+    html += `<h3 style="color:#2563eb; margin-top:20px; border-bottom: 2px solid #e2e8f0; font-size: 1rem;">${tema}</h3>`;
+    
+    GLOSARIO_CATEGORIZADO[tema].forEach(i => {
+      html += `
+        <div class="theory-section" onclick="speak('${i.p}: ${i.d}')" style="cursor:pointer; margin-bottom:8px;">
+          <b style="color:#0369a1;">${i.p}:</b> ${i.d}
+        </div>`;
+    });
+  }
+  
   document.getElementById('display-area').innerHTML = html;
   document.getElementById('action-buttons').innerHTML = `<button onclick="mainMenu()">⬅️ VOLVER</button>`;
 }
 
+let PREGUNTAS = []; // Variable global que contendrá las 30 de cada turno
+
 function startAventura() {
-  score = 0; currentIdx = 0; needsReview.clear();
-  updateHUD(); loadQuestion();
+  score = 0; 
+  currentIdx = 0; 
+  needsReview.clear();
+  
+  // 1. Mezclamos el banco de 60
+  let mezcladas = [...BANCO_PREGUNTAS].sort(() => Math.random() - 0.5);
+  
+  // 2. Elegimos las primeras 30 para este simulacro
+  PREGUNTAS = mezcladas.slice(0, 30);
+  
+  updateHUD(); 
+  loadQuestion();
 }
 
 function loadQuestion() {
