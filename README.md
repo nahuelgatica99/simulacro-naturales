@@ -1,31 +1,31 @@
-# 🔬 Simulacro de Ciencias Naturales: Calor y Aire
+# 🔬 Simulacro Interactivo: Ciencias Naturales (Calor y Aire)
 
-¡Bienvenido al **Centro de Estudio Interactivo**! Esta es una aplicación web diseñada para ayudar a estudiantes de primaria a repasar conceptos clave de Ciencias Naturales (Termodinámica, Mezclas de Gases y Cambios de Estado) de una forma divertida y dinámica.
+¡Bienvenido al **Centro de Estudio Interactivo**! Esta aplicación web está diseñada para que estudiantes de primaria dominen los conceptos de Termodinámica, Cambios de Estado y la Atmósfera de una forma divertida y dinámica.
 
-## 🚀 Características
-- **Modo Aventura:** Un simulacro de examen con 30 preguntas desafiantes.
-- **Biblioteca Educativa:** Teoría detallada con ejemplos de la vida real y "datos de examen".
-- **Glosario:** Conceptos técnicos explicados de forma sencilla.
-- **Sistema de Puntos y Récords:** Guarda tu puntuación máxima localmente para competir contra vos mismo.
-- **Accesibilidad:** ¡La app te lee las preguntas y la teoría en voz alta!
+## 🚀 Características Principales
+- **Simulacro Inteligente:** Banco de **60 preguntas** que selecciona **30 al azar** en cada intento. ¡Nunca harás el mismo examen dos veces!
+- **Glosario Estructurado:** Conceptos organizados exactamente según los ejes del temario:
+  1. La temperatura y el calor.
+  2. La medición de la temperatura.
+  3. La transmisión del calor.
+  4. Los estados de la materia.
+  5. El modelo corpuscular de la materia.
+  6. Los cambios de estado.
+  7. El aire y la atmósfera.
+- **Biblioteca Educativa:** Teoría detallada con ejemplos del mundo real y "datos de examen" para fijar conocimientos.
+- **Accesibilidad con Voz:** La app cuenta con una función de lectura automática para que puedas escuchar las preguntas y definiciones.
+- **Sistema de Récords:** Guarda tu puntuación máxima localmente para que puedas ver tu progreso.
 
-## 📖 Temas Incluidos
-* **Temperatura vs Calor:** Diferencias fundamentales y flujo de energía.
-* **Materiales:** Conductores y aislantes térmicos.
-* **Cambios de Estado:** Fusión, solidificación, evaporación y condensación.
-* **La Atmósfera:** Composición del aire y sus propiedades físicas.
-* **Transmisión del Calor:** Conducción, convección y radiación.
+## 🕹️ Cómo utilizar la aplicación
+1. **Biblioteca:** Repasá los conceptos clave con imágenes y ejemplos prácticos.
+2. **Glosario:** Buscá definiciones rápidas organizadas por los temas de clase.
+3. **¡Simulacro!:** Poné a prueba tus conocimientos. Recordá que el sistema te dará una explicación cada vez que falles para que aprendas del error.
 
-## 🛠️ Tecnologías utilizadas
-Este proyecto fue creado utilizando tecnologías web estándar (sin librerías externas):
-- **HTML5:** Estructura de la aplicación.
-- **CSS3:** Diseño responsivo y animaciones estilo "gaming".
-- **JavaScript (Vanilla):** Lógica del simulacro, manejo de `localStorage` y API de síntesis de voz.
-
-## 🕹️ Cómo jugar
-1. Entra al link del proyecto (disponible en la sección de GitHub Pages).
-2. Repasa los conceptos en la **Biblioteca**.
-3. ¡Inicia el **Simulacro** y trata de superar tu récord!
+## 🛠️ Detalles Técnicos
+Desarrollado 100% con tecnologías web estándar:
+- **HTML5:** Estructura semántica.
+- **CSS3:** Interfaz estilo "gaming" y diseño responsivo.
+- **JavaScript (Vanilla):** Lógica de aleatoriedad, gestión de estados y API de síntesis de voz.
 
 ---
-*Desarrollado con ❤️ para fomentar el aprendizaje de las ciencias.*
+*Diseñado con ❤️ para transformar el estudio en una aventura científica.*
