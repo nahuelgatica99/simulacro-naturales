@@ -1,31 +1,40 @@
-# 🔬 Simulacro Interactivo: Ciencias Naturales (Calor y Aire)
+# 🔬 Simulacro Científico: Calor, Temperatura y Aire
 
-¡Bienvenido al **Centro de Estudio Interactivo**! Esta aplicación web está diseñada para que estudiantes de primaria dominen los conceptos de Termodinámica, Cambios de Estado y la Atmósfera de una forma divertida y dinámica.
+¡Bienvenido al **Simulacro Interactivo de Ciencias Naturales**! Esta aplicación fue creada para transformar el estudio en una experiencia dinámica, ayudando a los estudiantes a repasar de forma autónoma y divertida.
 
-## 🚀 Características Principales
-- **Simulacro Inteligente:** Banco de **60 preguntas** que selecciona **30 al azar** en cada intento. ¡Nunca harás el mismo examen dos veces!
-- **Glosario Estructurado:** Conceptos organizados exactamente según los ejes del temario:
-  1. La temperatura y el calor.
-  2. La medición de la temperatura.
-  3. La transmisión del calor.
-  4. Los estados de la materia.
-  5. El modelo corpuscular de la materia.
-  6. Los cambios de estado.
-  7. El aire y la atmósfera.
-- **Biblioteca Educativa:** Teoría detallada con ejemplos del mundo real y "datos de examen" para fijar conocimientos.
-- **Accesibilidad con Voz:** La app cuenta con una función de lectura automática para que puedas escuchar las preguntas y definiciones.
-- **Sistema de Récords:** Guarda tu puntuación máxima localmente para que puedas ver tu progreso.
+## 🌟 ¿Qué vas a encontrar en esta App?
 
-## 🕹️ Cómo utilizar la aplicación
-1. **Biblioteca:** Repasá los conceptos clave con imágenes y ejemplos prácticos.
-2. **Glosario:** Buscá definiciones rápidas organizadas por los temas de clase.
-3. **¡Simulacro!:** Poné a prueba tus conocimientos. Recordá que el sistema te dará una explicación cada vez que falles para que aprendas del error.
+La aplicación está dividida en tres secciones clave para un aprendizaje completo:
 
-## 🛠️ Detalles Técnicos
-Desarrollado 100% con tecnologías web estándar:
-- **HTML5:** Estructura semántica.
-- **CSS3:** Interfaz estilo "gaming" y diseño responsivo.
-- **JavaScript (Vanilla):** Lógica de aleatoriedad, gestión de estados y API de síntesis de voz.
+1. **🚀 Simulacro de Examen:**
+   - Un banco de **60 preguntas** actualizadas.
+   - En cada partida, el sistema elige **30 preguntas al azar**.
+   - Si fallas, la app te explica el concepto para que aprendas del error.
+   - **Récord Personal:** ¡Compite contra tu mejor puntuación!
+
+2. **📚 Biblioteca de Estudio:**
+   - Teoría explicada con ejemplos de la vida diaria (como termos, sartenes y cubos de hielo).
+   - Datos clave para recordar antes de una prueba.
+
+3. **📖 Glosario por Temas:**
+   - Los conceptos están organizados según los 7 ejes principales:
+     - La temperatura y el calor.
+     - La medición de la temperatura.
+     - La transmisión del calor (Conducción, Convección y Radiación).
+     - Los estados de la materia.
+     - El modelo corpuscular de la materia.
+     - Los cambios de estado.
+     - El aire y la atmósfera.
+
+## 🛠️ Funciones Especiales
+- **Asistente de Voz:** La app puede leer en voz alta las preguntas y definiciones (ideal para estudiar sin cansar la vista).
+- **Historial de Intentos:** En el menú principal podrás ver tus últimos puntajes para seguir tu progreso.
+
+## 🕹️ Instrucciones de Uso
+1. **Entra al link:** Accede desde cualquier dispositivo con internet.
+2. **Repasa:** Entra al Glosario o Biblioteca si tienes dudas sobre un tema.
+3. **Juega:** Inicia el simulacro. Lee con atención y usa la "Pista" si te trabas.
+4. **Supera tu récord:** Intenta llegar a los 300 puntos sin fallar.
 
 ---
-*Diseñado con ❤️ para transformar el estudio en una aventura científica.*
+*Desarrollado para potenciar el aprendizaje científico en casa.*
